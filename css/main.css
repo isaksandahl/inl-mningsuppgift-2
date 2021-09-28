@@ -3,10 +3,81 @@ body html {
   margin: 0;
 }
 
+* {
+  margin: 0;
+}
+
 .hero-image {
-  background-image: url(/assets/negative-space-black-forest-dawn.jpg);
+  background-image: url("../assets/negative-space-black-forest-dawn.jpg");
   height: 100vh;
   width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navbox {
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.navbox .hamburger {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+  padding: 15px;
+}
+.navbox .hamburger .bar1, .navbox .hamburger .bar2, .navbox .hamburger .bar3 {
+  width: 30px;
+  height: 5px;
+  background-color: #fff;
+  margin: 2px 0;
+  border-radius: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.navbox ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  opacity: 1;
+  font-size: 20px;
+  visibility: hidden;
+  display: none;
+  transition: all 1s linear;
+}
+.navbox ul a {
+  display: block;
+  padding: 1px;
+  text-decoration: none;
+  color: #fff;
+}
+.navbox ul a:hover {
+  text-decoration: underline;
+}
+.navbox #toggle {
+  display: none;
+}
+.navbox #toggle:checked + .hamburger .bar1 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-top: 13px;
+}
+.navbox #toggle:checked + .hamburger .bar2 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: -7px;
+}
+.navbox #toggle:checked + .hamburger .bar3 {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.navbox #toggle:checked ~ ul {
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  transition: all 1s linear;
 }
 
 /*# sourceMappingURL=main.css.map */
