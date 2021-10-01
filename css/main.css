@@ -15,6 +15,20 @@ body html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.hero-image .hero-text {
+  color: #FFF;
+  text-align: center;
+}
+.hero-image .hero-text h2 {
+  font-weight: lighter;
+  padding: 40px;
+}
+
+.arrow {
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+}
 
 .navbox {
   margin-bottom: 10px;
@@ -78,6 +92,10 @@ body html {
   display: block;
   opacity: 1;
   transition: all 1s linear;
+}
+
+.profiles {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=main.css.map */

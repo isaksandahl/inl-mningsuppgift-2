@@ -14,16 +14,31 @@ body html {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    .hero-text {
+        color: #FFF;
+        text-align: center;
+        
+        h1 {
+
+        }
+
+        h2 {
+            font-weight: lighter;
+            padding: 40px;
+        }
+    }
+}
+
+.arrow {
+    color:#fff;
+    text-decoration: none;
+    font-size: 25px;
 }
 
 .navbox {
     margin-bottom: 10px;
     background: rgba(255, 255, 255, 0.2);
-    
-    
-    
-    
-    
     
     .hamburger {
         
@@ -98,4 +113,9 @@ body html {
         opacity: 1;
         transition: all 1s linear;
     }
+
+}
+
+.profiles {
+    height: 100vh;
 }
