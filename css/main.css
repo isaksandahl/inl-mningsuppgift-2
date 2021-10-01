@@ -18,6 +18,13 @@ body html {
 .hero-image .hero-text {
   color: #FFF;
   text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 80vh;
 }
 .hero-image .hero-text h2 {
   font-weight: lighter;
@@ -28,11 +35,14 @@ body html {
   color: #fff;
   text-decoration: none;
   font-size: 25px;
+  display: block;
+  text-align: center;
 }
 
 .navbox {
   margin-bottom: 10px;
   background: rgba(255, 255, 255, 0.2);
+  position: relative;
 }
 .navbox .hamburger {
   display: flex;
@@ -67,9 +77,6 @@ body html {
   text-decoration: none;
   color: #fff;
 }
-.navbox ul a:hover {
-  text-decoration: underline;
-}
 .navbox #toggle {
   display: none;
 }
@@ -90,12 +97,61 @@ body html {
 .navbox #toggle:checked ~ ul {
   visibility: visible;
   display: block;
+  position: absolute;
   opacity: 1;
-  transition: all 1s linear;
+  width: 100%;
 }
 
-.profiles {
+#about {
   height: 100vh;
+  width: 100%;
+}
+#about h1 {
+  text-align: center;
+  font-weight: lighter;
+}
+#about .profile {
+  height: 25%;
+}
+#about .profile p {
+  text-align: center;
+}
+#about .profile .profile-box {
+  height: 50%;
+  width: 100%;
+}
+#about .profile .profile-box img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  box-shadow: 2px 2px 15px grey;
+}
+#about .profile .profile-text {
+  background-color: lightgrey;
 }
 
-/*# sourceMappingURL=main.css.map */
+#contact {
+  height: 70vh;
+  width: 100%;
+  background-color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  ul {
+    width: 100%;
+    visibility: visible;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .hamburger {
+    visibility: hidden;
+    display: none;
+  }
+}
