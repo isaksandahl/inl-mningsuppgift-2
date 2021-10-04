@@ -51,8 +51,7 @@ html, body {
     }
 }
 
-.navbox {
-    margin-bottom: 10px;
+.navboxMobile {
     background: rgba(255, 255, 255, 0.2);
     position: relative;
     
@@ -84,20 +83,18 @@ html, body {
         padding: 0;
         list-style-type: none;
         text-align: center;
-        opacity: 1;
         font-size: 20px;
         visibility: hidden;
         display: none;
-        transition: all 1s linear;
         
         a {
             display: block;
             padding: 1px;
             text-decoration: none;
             color: #fff;
+
         }
     }
-
     #toggle {
         display: none;
     }
@@ -124,11 +121,30 @@ html, body {
         visibility: visible;
         display: block;
         position: absolute;
-        opacity: 1;
         width: 100%;
         
     }
 
+}
+
+.navboxDesktop {
+    visibility: hidden;
+    display: none;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+
+        a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 #about {
@@ -218,21 +234,16 @@ html, body {
 
 @media screen and (min-width: 768px){
 
-    ul {
-        width: 100%;
-        visibility: visible;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .hamburger {
+    .navboxMobile {
         visibility: hidden;
         display: none;
+    }
+
+    .navboxDesktop {
+        display: flex;
+        justify-content: flex-end;
+        visibility: visible;
+        background: rgba(255, 255, 255, 0.1);
     }
 
     .flexProfiles {
