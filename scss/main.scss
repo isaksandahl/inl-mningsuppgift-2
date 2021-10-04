@@ -1,9 +1,11 @@
-body html {
+html, body {
     height: 100%;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 * {
+
     margin: 0;
 }
 
@@ -33,12 +35,20 @@ body html {
     }
 }
 
-.arrow {
-    color:#fff;
-    text-decoration: none;
-    font-size: 25px;
-    display: block;
+.arrowBox {
+
     text-align: center;
+    padding: 20px;
+
+    .arrowOne {
+    color:#fff;
+    font-size: 25px;
+    }
+
+    .arrowTwo {
+    color: #000;
+    font-size: 25px;
+    }
 }
 
 .navbox {
@@ -70,6 +80,7 @@ body html {
     }
     
     ul {
+        background: rgba(255, 255, 255, 0.2);
         padding: 0;
         list-style-type: none;
         text-align: center;
@@ -121,24 +132,31 @@ body html {
 }
 
 #about {
-    height: 100vh;
     width: 100%;
 
     h1 {
         text-align: center;
         font-weight: lighter;
+        padding: 20px;
     }
 
     .profile {
         height: 25%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center; 
 
         p {
             text-align: center;
+            padding: 10px;
         }
 
         .profile-box {
             height: 50%;
-            width: 100%;
+            width: 55%;
+            margin: 0 auto;
+            padding: 15px;
 
         }
         .profile-box img {
@@ -151,6 +169,14 @@ body html {
 
         .profile-text {
             background-color: lightgrey;
+            border-radius: 5px;
+            padding: 40px;
+            margin-bottom: 10px;
+            width: 60%;
+
+            .quoteSign {
+                font-size: 30px;
+            }
         }
     }
 }
@@ -159,9 +185,38 @@ body html {
     height: 70vh;
     width: 100%;
     background-color: black;
+
+    .info-links {
+        height: 100%;
+        color: #fff;
+        font-size: 25px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+
+        .location, .reachMe, .socials {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .socials p {
+            padding-bottom: 10px;
+
+            i {
+                padding-right: 20px;
+                width: 10%;
+            }
+        }
+
+        p {
+            padding: 5px;
+        }
+    }
 }
 
-@media only screen and (min-width: 768px){
+@media screen and (min-width: 768px){
 
     ul {
         width: 100%;
@@ -178,5 +233,26 @@ body html {
     .hamburger {
         visibility: hidden;
         display: none;
+    }
+
+    .flexProfiles {
+        display: flex;
+        flex-flow: row wrap;
+
+        .profile {
+            width: 50%;
+        }
+    }
+
+    #contact {
+        display: flex;
+        flex-flow: column wrap;
+
+        .info-links {
+            flex-flow: row wrap;
+            align-content: center;
+            align-items: center;
+            justify-content: space-around;
+        }
     }
 }

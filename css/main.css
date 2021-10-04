@@ -1,6 +1,7 @@
-body html {
+html, body {
   height: 100%;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -31,12 +32,17 @@ body html {
   padding: 40px;
 }
 
-.arrow {
-  color: #fff;
-  text-decoration: none;
-  font-size: 25px;
-  display: block;
+.arrowBox {
   text-align: center;
+  padding: 20px;
+}
+.arrowBox .arrowOne {
+  color: #fff;
+  font-size: 25px;
+}
+.arrowBox .arrowTwo {
+  color: #000;
+  font-size: 25px;
 }
 
 .navbox {
@@ -62,6 +68,7 @@ body html {
   transition: all 0.2s ease-in-out;
 }
 .navbox ul {
+  background: rgba(255, 255, 255, 0.2);
   padding: 0;
   list-style-type: none;
   text-align: center;
@@ -103,22 +110,29 @@ body html {
 }
 
 #about {
-  height: 100vh;
   width: 100%;
 }
 #about h1 {
   text-align: center;
   font-weight: lighter;
+  padding: 20px;
 }
 #about .profile {
   height: 25%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 #about .profile p {
   text-align: center;
+  padding: 10px;
 }
 #about .profile .profile-box {
   height: 50%;
-  width: 100%;
+  width: 55%;
+  margin: 0 auto;
+  padding: 15px;
 }
 #about .profile .profile-box img {
   display: block;
@@ -129,6 +143,13 @@ body html {
 }
 #about .profile .profile-text {
   background-color: lightgrey;
+  border-radius: 5px;
+  padding: 40px;
+  margin-bottom: 10px;
+  width: 60%;
+}
+#about .profile .profile-text .quoteSign {
+  font-size: 30px;
 }
 
 #contact {
@@ -136,8 +157,32 @@ body html {
   width: 100%;
   background-color: black;
 }
+#contact .info-links {
+  height: 100%;
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+}
+#contact .info-links .location, #contact .info-links .reachMe, #contact .info-links .socials {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#contact .info-links .socials p {
+  padding-bottom: 10px;
+}
+#contact .info-links .socials p i {
+  padding-right: 20px;
+  width: 10%;
+}
+#contact .info-links p {
+  padding: 5px;
+}
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   ul {
     width: 100%;
     visibility: visible;
@@ -153,5 +198,24 @@ body html {
   .hamburger {
     visibility: hidden;
     display: none;
+  }
+
+  .flexProfiles {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .flexProfiles .profile {
+    width: 50%;
+  }
+
+  #contact {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  #contact .info-links {
+    flex-flow: row wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
   }
 }
