@@ -1,5 +1,6 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass")(require("sass"));
+var csso = require("gulp-csso");
 
 gulp.task("compile", function(){
 
@@ -15,9 +16,21 @@ gulp.task("watch-scss", function(){
 
 });
 
+gulp.task('optimize', function () {
+    return gulp.src('css/main.css')
+        .pipe(csso())
+        .pipe(gulp.dest('csso'));
+});
+
+gulp.task('development', function () {
+    return gulp.src('css/main.css')
+        .pipe(csso({
+            restructure: false,
+            sourceMap: true,
+            debug: true
+        }))
+        .pipe(gulp.dest('csso'));
+});
+
 gulp.task("default",gulp.series("compile", "watch-scss"), function(){});
 
-
-// var gulp = require("gulp");
-// var sass = require("gulp-sass")(require("sass"));
-// var csso = require("gulp-csso");
